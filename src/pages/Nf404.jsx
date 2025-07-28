@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 
 export default function NotFound() {
+
     return (
+
         <div className="container">
             <div className="d-flex flex-column justify-content-center align-items-center gap-5 mt-5">
                 <h1>404 - La pagina non è stata trovata</h1>
@@ -12,5 +14,7 @@ export default function NotFound() {
                 <Link className="btn btn-dark fs-1" to={'/'}>Torna alla Home</Link>
             </div>
         </div>
+
     )
+
 }

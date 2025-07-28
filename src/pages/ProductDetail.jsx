@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 
-
 export default function ProductDetail() {
+
     const { id } = useParams();
     const apiUrl = `https://fakestoreapi.com/products/${id}`;
     const [product, setProduct] = useState({});
@@ -16,9 +16,9 @@ export default function ProductDetail() {
             .then(data => {
                 setProduct(data);
             })
-            .catch(err => {
-                navigate('/*');
-            })
+            // .catch(err => {
+            //     navigate('/*');
+            // })
             .finally(() => {
                 setIsLoading(false); // 
             });
@@ -26,6 +26,7 @@ export default function ProductDetail() {
 
     return (
         <>
+
             {isLoading && (
                 <div className="d-flex justify-content-center align-items-center mt-5">
                     <p className="me-3 fs-4">Caricamento</p> {/* Messaggio esistente */}
@@ -34,6 +35,7 @@ export default function ProductDetail() {
                     </div>
                 </div>
             )}
+
             <div className="container text-center">
                 <div className="card w-75 border-0 mx-auto">
                     <div className="d-flex justify-content-end me-5 mb-3">
@@ -56,6 +58,7 @@ export default function ProductDetail() {
                     </div>
                 </div>
             </div>
+
         </>
     )
 }

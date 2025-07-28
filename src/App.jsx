@@ -9,7 +9,6 @@ import { PostsProvider } from './contexts/PostsContext';
 
 function App() {
 
-
   return (
     <>
 
@@ -33,20 +32,9 @@ function App() {
         </BrowserRouter>
 
       </PostsProvider>
+
     </>
   )
 }
 
 export default App
-
-
-
-
-/*
-Creiamo un file per definire il nostro Context ed esportiamolo
-Importiamo il Provider in App.jsx e wrappiamoci la nostra applicazione - Facciamo in modo che il componente ProductsList.jsx recuperi i prodotti consumando il Context e crei dunque una card per ciascuno di essi.
-La struttura dell’App deve essere
-App.jsx > ProductsPage.jsx > ProductsList.jsx > ProductCard.jsx
-Bonus
-Implementare un componente Alert gestito tramite Context
-*/

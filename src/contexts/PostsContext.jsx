@@ -6,6 +6,7 @@ function PostsProvider({ children }) {
     const apiUrl = 'https://fakestoreapi.com/products'
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
+    const [isError, setIsError] = useState(null)
 
     useEffect(() => {
         setIsLoading(true)
@@ -16,20 +17,26 @@ function PostsProvider({ children }) {
                 return data;
             })
             .catch(err => {
-                alert('Si è verificato un errore durante il recupero dei dati. Riprova in un secondo mommento.')
+                setIsError('Si è verificato un errore durante il recupero dei dati. Riprova in un secondo momento.')
             })
             .finally(() => {
                 setIsLoading(false)
             })
     }, []);
+
     return (
+
         <PostsContext.Provider value={{
             products,
+            isLoading,
+            isError,
             setProducts
         }}>
             {children}
         </PostsContext.Provider>
+
     )
+
 }
 
 function usePostsContext() {
