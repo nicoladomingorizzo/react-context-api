@@ -17,7 +17,7 @@ export default function ProductDetail() {
                 setProduct(data);
             })
             .catch(err => {
-                navigate('/files/*');
+                navigate('/*');
             })
             .finally(() => {
                 setIsLoading(false); // 
