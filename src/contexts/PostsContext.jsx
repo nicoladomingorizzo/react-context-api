@@ -16,7 +16,7 @@ function PostsProvider({ children }) {
                 return data;
             })
             .catch(err => {
-                alert(`Si è verificato un errore: ${err} `)
+                alert('Si è verificato un errore durante il recupero dei dati. Riprova in un secondo mommento.')
             })
             .finally(() => {
                 setIsLoading(false)
