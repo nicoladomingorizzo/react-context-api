@@ -1,10 +1,8 @@
 import { useState } from "react"
 import ProductCard from "./ProductCard";
-import { usePostsContext } from "../contexts/PostsContext";
 
 export default function ProductsList() {
 
-    const { products } = usePostsContext();
     const [isLoading, setIsLoading] = useState(false)
 
     return (
