@@ -1,14 +1,18 @@
 
 import ProductsList from "../components/ProductsList";
-export default function ProductPage({ products }) {
+
+import { useGlobalContext } from "../contexts/GlobalContext";
 
 
+export default function ProductPage() {
 
+    //Destrutturo l'oggetto
+    const { products } = useGlobalContext();
 
     return (
         <>
             <main className="pb-2">
-                <ProductsList />
+                <ProductsList products={products} />
             </main>
         </>
 
