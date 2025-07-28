@@ -1,13 +1,13 @@
 
 import ProductsList from "../components/ProductsList";
 
-import { useGlobalContext } from "../contexts/GlobalContext";
+import { usePostsContext } from "../contexts/PostsContext";
 
 
 export default function ProductPage() {
 
     //Destrutturo l'oggetto
-    const { products } = useGlobalContext();
+    const { products } = usePostsContext();
 
     return (
         <>

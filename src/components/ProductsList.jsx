@@ -1,10 +1,10 @@
 import { useState } from "react"
 import ProductCard from "./ProductCard";
-import { useGlobalContext } from "../contexts/GlobalContext";
+import { usePostsContext } from "../contexts/PostsContext";
 
 export default function ProductsList() {
 
-    const { products } = useGlobalContext();
+    const { products } = usePostsContext();
     const [isLoading, setIsLoading] = useState(false)
 
     return (

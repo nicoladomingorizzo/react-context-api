@@ -5,7 +5,7 @@ import AboutUsPage from './pages/AboutUsPage';
 import DefaultLayout from './layouts/DefaultLayout';
 import ProductDetail from './pages/ProductDetail';
 import NotFound from './pages/Nf404';
-import { GlobalProvider } from './contexts/GlobalContext';
+import { PostsProvider } from './contexts/PostsContext';
 
 function App() {
 
@@ -13,7 +13,7 @@ function App() {
   return (
     <>
 
-      <GlobalProvider>
+      <PostsProvider>
 
         <BrowserRouter>
 
@@ -32,7 +32,7 @@ function App() {
 
         </BrowserRouter>
 
-      </GlobalProvider>
+      </PostsProvider>
     </>
   )
 }

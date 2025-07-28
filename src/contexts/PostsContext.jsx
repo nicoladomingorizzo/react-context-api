@@ -1,8 +1,8 @@
 import { useEffect, createContext, useContext, useState } from "react";
 
-const GlobalContext = createContext()
+const PostsContext = createContext()
 
-function GlobalProvider({ children }) {
+function PostsProvider({ children }) {
     const apiUrl = 'https://fakestoreapi.com/products'
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
@@ -20,17 +20,17 @@ function GlobalProvider({ children }) {
             })
     }, []);
     return (
-        <GlobalContext.Provider value={{
+        <PostsContext.Provider value={{
             products,
             setProducts
         }}>
             {children}
-        </GlobalContext.Provider>
+        </PostsContext.Provider>
     )
 }
 
-function useGlobalContext() {
-    return useContext(GlobalContext)
+function usePostsContext() {
+    return useContext(PostsContext)
 }
 
-export { GlobalProvider, useGlobalContext };
+export { PostsProvider, usePostsContext };

@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import { useGlobalContext } from "../contexts/GlobalContext";
+import { usePostsContext } from "../contexts/PostsContext";
 
 export default function ProductCard() {
 
-    const { products } = useGlobalContext();
+    const { products } = usePostsContext();
 
     return (
         <div className="row row-cols-1 row-cols-lg-2 g-4 my-5 mx-2">
