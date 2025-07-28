@@ -15,6 +15,9 @@ function PostsProvider({ children }) {
                 setProducts(data)
                 return data;
             })
+            .catch(err => {
+                alert(`Si è verificato un errore: ${err} `)
+            })
             .finally(() => {
                 setIsLoading(false)
             })
