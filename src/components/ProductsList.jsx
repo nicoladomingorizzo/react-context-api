@@ -1,8 +1,10 @@
 import { useState } from "react"
 import ProductCard from "./ProductCard";
+import { useGlobalContext } from "../contexts/GlobalContext";
 
-export default function ProductsList({ products }) {
+export default function ProductsList() {
 
+    const { products } = useGlobalContext();
     const [isLoading, setIsLoading] = useState(false)
 
     return (
@@ -16,7 +18,7 @@ export default function ProductsList({ products }) {
                 </div>
             )}
             <h2 className="text-center fs-1 pt-5">I NOSTRI PRODOTTI</h2>
-            <ProductCard products={products} />
+            <ProductCard />
         </>
     )
 }

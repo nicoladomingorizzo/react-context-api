@@ -1,6 +1,10 @@
 import { Link } from "react-router-dom";
+import { useGlobalContext } from "../contexts/GlobalContext";
 
-export default function ProductCard({ products }) {
+export default function ProductCard() {
+
+    const { products } = useGlobalContext();
+
     return (
         <div className="row row-cols-1 row-cols-lg-2 g-4 my-5 mx-2">
             {products?.length && products.map(product => {
